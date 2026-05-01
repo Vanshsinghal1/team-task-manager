@@ -1,6 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import API from "../api";
 
 export default function Signup() {
   const [form, setForm] = useState({
@@ -15,14 +16,9 @@ export default function Signup() {
     e.preventDefault();
 
     try {
-      const res = await axios.post(
-        "http://localhost:5000/api/auth/signup",
-        form
-      );
+      await axios.post(`${API}/api/auth/signup`, form);
 
       alert("✅ Signup successful! Please login");
-
-      
       navigate("/user-login");
 
     } catch (err) {
@@ -73,7 +69,7 @@ export default function Signup() {
           Already have an account?{" "}
           <span
             className="text-blue-400 cursor-pointer"
-            onClick={() => navigate("/login")}
+            onClick={() => navigate("/user-login")}
           >
             Login
           </span>

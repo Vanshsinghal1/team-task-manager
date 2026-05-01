@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
+import API from "../api";
 
 export default function UserDashboard() {
   const [tasks, setTasks] = useState([]);
@@ -8,7 +9,7 @@ export default function UserDashboard() {
 
   const fetchTasks = async () => {
     const res = await axios.get(
-      `http://localhost:5000/api/tasks/mytasks/${userId}`
+      `${API}/api/tasks/mytasks/${userId}`
     );
     setTasks(res.data);
   };
@@ -19,7 +20,7 @@ export default function UserDashboard() {
 
   const markDone = async (id) => {
     await axios.put(
-      `http://localhost:5000/api/tasks/update/${id}`,
+      `${API}/api/tasks/update/${id}`,
       { status: "completed" }
     );
     fetchTasks();
@@ -34,18 +35,16 @@ export default function UserDashboard() {
         {tasks.map((task) => (
           <div key={task._id} className="bg-gray-800 p-4 rounded shadow">
 
-            <h2 className="text-lg font-semibold">{task.title}</h2>
-            <p className="text-gray-400">{task.description}</p>
+            <h2>{task.title}</h2>
+            <p>{task.description}</p>
 
-            <p className="mt-2">
+            <p>
               Status:{" "}
-              <span
-                className={
-                  task.status === "completed"
-                    ? "text-green-400"
-                    : "text-yellow-400"
-                }
-              >
+              <span className={
+                task.status === "completed"
+                  ? "text-green-400"
+                  : "text-yellow-400"
+              }>
                 {task.status}
               </span>
             </p>
@@ -53,7 +52,7 @@ export default function UserDashboard() {
             {task.status !== "completed" && (
               <button
                 onClick={() => markDone(task._id)}
-                className="bg-green-500 px-3 py-1 mt-3 rounded hover:bg-green-600"
+                className="bg-green-500 px-3 py-1 mt-3 rounded"
               >
                 ✔ Mark Done
               </button>

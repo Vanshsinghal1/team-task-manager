@@ -4,7 +4,7 @@ const Task = require("../models/Task");
 const router = express.Router();
 
 
-// ✅ 1. Create Task (Admin assigns task)
+
 router.post("/create", async (req, res) => {
   try {
     const task = await Task.create(req.body);
@@ -16,7 +16,7 @@ router.post("/create", async (req, res) => {
 });
 
 
-// ✅ 2. Get All Tasks (Admin Dashboard)
+
 router.get("/", async (req, res) => {
   try {
     const tasks = await Task.find()
@@ -31,7 +31,7 @@ router.get("/", async (req, res) => {
 });
 
 
-// ✅ 3. Get Tasks of Logged-in User 🔥 (IMPORTANT)
+
 router.get("/mytasks/:userId", async (req, res) => {
   try {
     const tasks = await Task.find({ assignedTo: req.params.userId })
@@ -46,7 +46,7 @@ router.get("/mytasks/:userId", async (req, res) => {
 });
 
 
-// ✅ 4. Update Task Status (User marks done)
+
 router.put("/update/:id", async (req, res) => {
   try {
     const task = await Task.findByIdAndUpdate(
@@ -63,7 +63,7 @@ router.put("/update/:id", async (req, res) => {
 });
 
 
-// ✅ 5. Delete Task (Admin)
+
 router.delete("/:id", async (req, res) => {
   try {
     await Task.findByIdAndDelete(req.params.id);

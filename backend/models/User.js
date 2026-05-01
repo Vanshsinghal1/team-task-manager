@@ -6,7 +6,7 @@ const userSchema = new mongoose.Schema({
   password: String,
   role: {
     type: String,
-    enum: ["admin", "user"], // ✅ only these
+    enum: ["admin", "user"],
     default: "user"
   }
 });

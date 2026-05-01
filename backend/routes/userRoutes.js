@@ -3,7 +3,7 @@ const User = require("../models/User");
 
 const router = express.Router();
 
-// ✅ Get only NORMAL USERS (not admin)
+
 router.get("/", async (req, res) => {
   try {
     const users = await User.find({ role: "user" }).select("name email");

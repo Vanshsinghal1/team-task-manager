@@ -6,14 +6,14 @@ const Dashboard = () => {
   const [tasks, setTasks] = useState([]);
   const [filter, setFilter] = useState("all");
 
-  // ✅ NEW STATE (Create Task)
+  
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
 
   const navigate = useNavigate();
   const token = localStorage.getItem("token");
 
-  // 🔥 Fetch tasks
+  
   const fetchTasks = async () => {
     try {
       const res = await axios.get("http://localhost:5000/api/tasks", {
@@ -29,7 +29,7 @@ const Dashboard = () => {
     fetchTasks();
   }, []);
 
-  // 🔥 Create Task
+  
   const createTask = async () => {
     if (!title || !description) {
       alert("Please fill all fields");
@@ -51,7 +51,7 @@ const Dashboard = () => {
     }
   };
 
-  // 🔥 Update status
+  
   const markCompleted = async (id) => {
     try {
       await axios.put(
@@ -65,7 +65,7 @@ const Dashboard = () => {
     }
   };
 
-  // 🔥 Delete task
+  
   const deleteTask = async (id) => {
     try {
       await axios.delete(`http://localhost:5000/api/tasks/${id}`, {
@@ -77,13 +77,13 @@ const Dashboard = () => {
     }
   };
 
-  // 🔥 Logout
+  
   const logout = () => {
     localStorage.removeItem("token");
     navigate("/");
   };
 
-  // 🔥 Filter
+  
   const filteredTasks =
     filter === "all"
       ? tasks
@@ -92,7 +92,7 @@ const Dashboard = () => {
   return (
     <div className="min-h-screen bg-gray-900 text-white p-6">
 
-      {/* HEADER */}
+     
       <div className="flex justify-between items-center mb-6">
         <h1 className="text-3xl font-bold">🚀 Dashboard</h1>
 
@@ -104,7 +104,7 @@ const Dashboard = () => {
         </button>
       </div>
 
-      {/* 🔥 CREATE TASK UI */}
+      
       <div className="bg-gray-800 p-4 rounded mb-6 shadow-lg">
         <h2 className="text-lg mb-3 font-semibold">➕ Create Task</h2>
 
@@ -130,7 +130,7 @@ const Dashboard = () => {
         </button>
       </div>
 
-      {/* FILTERS */}
+     
       <div className="flex gap-4 mb-6">
         {["all", "pending", "completed"].map((f) => (
           <button
@@ -145,7 +145,7 @@ const Dashboard = () => {
         ))}
       </div>
 
-      {/* TASKS */}
+      
       <div className="grid md:grid-cols-3 gap-6">
         {filteredTasks.map((task) => (
           <div

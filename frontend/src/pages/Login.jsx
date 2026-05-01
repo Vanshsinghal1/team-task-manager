@@ -21,7 +21,7 @@ export default function Login() {
         form
       );
 
-      // 🔥 Role validation
+      
       if (isAdminRoute && res.data.user.role !== "admin") {
         alert("❌ Not an admin account");
         setLoading(false);
@@ -34,13 +34,12 @@ export default function Login() {
         return;
       }
 
-      // 🔥 Store data
+     
       localStorage.setItem("token", res.data.token);
       localStorage.setItem("role", res.data.user.role);
       localStorage.setItem("userId", res.data.user.id);
 
-      // 🔥 Redirect
-      if (res.data.user.role === "admin") {
+            if (res.data.user.role === "admin") {
         navigate("/admin-dashboard");
       } else {
         navigate("/user-dashboard");
@@ -60,12 +59,12 @@ export default function Login() {
         onSubmit={handleLogin}
         className="bg-gray-800 p-8 rounded-xl shadow-lg w-80"
       >
-        {/* Title */}
+        
         <h2 className="text-2xl mb-6 text-center font-bold">
           {isAdminRoute ? "👑 Admin Login" : "👨‍💻 User Login"}
         </h2>
 
-        {/* Email */}
+        
         <input
           placeholder="Email"
           required
@@ -75,7 +74,7 @@ export default function Login() {
           className="w-full mb-3 p-2 rounded bg-gray-700 outline-none"
         />
 
-        {/* Password */}
+       
         <input
           placeholder="Password"
           type="password"
@@ -86,7 +85,7 @@ export default function Login() {
           className="w-full mb-4 p-2 rounded bg-gray-700 outline-none"
         />
 
-        {/* Button */}
+       
         <button
           className="w-full bg-green-500 py-2 rounded hover:bg-green-600"
           disabled={loading}
@@ -94,7 +93,7 @@ export default function Login() {
           {loading ? "Logging in..." : "Login"}
         </button>
 
-        {/* Signup (only user) */}
+        
         {!isAdminRoute && (
           <p className="text-sm mt-4 text-center text-gray-400">
             New user?{" "}
@@ -107,7 +106,7 @@ export default function Login() {
           </p>
         )}
 
-        {/* Back */}
+       
         <p
           onClick={() => navigate("/")}
           className="text-center mt-4 text-gray-500 cursor-pointer text-sm"

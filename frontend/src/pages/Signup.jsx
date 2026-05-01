@@ -22,7 +22,7 @@ export default function Signup() {
 
       alert("✅ Signup successful! Please login");
 
-      // 🔥 redirect to login
+      
       navigate("/user-login");
 
     } catch (err) {

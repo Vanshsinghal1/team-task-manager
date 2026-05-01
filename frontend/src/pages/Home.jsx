@@ -10,7 +10,7 @@ export default function Home() {
 
       <div className="flex gap-6">
 
-        {/* Admin */}
+       
         <button
           onClick={() => navigate("/admin-login")}
           className="bg-red-500 px-6 py-3 rounded-lg hover:bg-red-600 transition"
@@ -18,7 +18,7 @@ export default function Home() {
           👑 Admin Login
         </button>
 
-        {/* User */}
+        
         <button
           onClick={() => navigate("/user-login")}
           className="bg-blue-500 px-6 py-3 rounded-lg hover:bg-blue-600 transition"
@@ -28,7 +28,7 @@ export default function Home() {
 
       </div>
 
-      {/* Signup link */}
+      
       <p className="mt-6 text-gray-400">
         New user?{" "}
         <span

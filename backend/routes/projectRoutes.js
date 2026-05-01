@@ -4,7 +4,7 @@ const auth = require("../middleware/auth");
 
 const router = express.Router();
 
-// Create Project (Admin only)
+
 router.post("/create", auth, async (req, res) => {
   try {
     if (req.user.role !== "admin") {
@@ -26,7 +26,7 @@ router.post("/create", auth, async (req, res) => {
   }
 });
 
-// Get all projects (Admin → all, Member → assigned)
+
 router.get("/", auth, async (req, res) => {
   try {
     let projects;

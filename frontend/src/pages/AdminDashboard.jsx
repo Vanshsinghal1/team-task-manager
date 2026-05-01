@@ -9,7 +9,7 @@ export default function AdminDashboard() {
   const [description, setDescription] = useState("");
   const [assignedTo, setAssignedTo] = useState("");
 
-  // 🔥 Fetch Tasks
+  
   const fetchTasks = async () => {
     try {
       const res = await axios.get("http://localhost:5000/api/tasks");
@@ -19,11 +19,11 @@ export default function AdminDashboard() {
     }
   };
 
-  // 🔥 Fetch Users (FIXED API ✅)
+ 
   const fetchUsers = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/users"); // ✅ FIX
-      console.log("USERS:", res.data); // debug
+      const res = await axios.get("http://localhost:5000/api/users"); 
+      console.log("USERS:", res.data); 
       setUsers(res.data);
     } catch (err) {
       console.log(err);
@@ -35,7 +35,7 @@ export default function AdminDashboard() {
     fetchUsers();
   }, []);
 
-  // 🔥 Create Task
+  
   const createTask = async () => {
     if (!title || !description || !assignedTo) {
       return alert("Fill all fields");
@@ -63,7 +63,7 @@ export default function AdminDashboard() {
 
       <h1 className="text-3xl mb-6 font-bold">👑 Admin Dashboard</h1>
 
-      {/* 🔥 CREATE TASK */}
+      
       <div className="bg-gray-800 p-5 rounded mb-6 shadow-lg">
         <h2 className="mb-3 text-lg font-semibold">➕ Create & Assign Task</h2>
 
@@ -81,7 +81,7 @@ export default function AdminDashboard() {
           className="block w-full p-2 mb-2 bg-gray-700 rounded"
         />
 
-        {/* 🔥 USER DROPDOWN */}
+        
         <select
           value={assignedTo}
           onChange={(e) => setAssignedTo(e.target.value)}

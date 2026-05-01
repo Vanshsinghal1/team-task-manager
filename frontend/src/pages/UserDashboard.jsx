@@ -42,7 +42,7 @@ export default function UserDashboard() {
     <div style={styles.root}>
       <div style={styles.blob1} />
 
-      {/* HEADER */}
+      
       <header style={styles.header}>
         <div style={styles.headerLeft}>
           <span>🌿</span>
@@ -58,7 +58,7 @@ export default function UserDashboard() {
       </header>
 
       <div style={styles.main}>
-        {/* WELCOME + PROGRESS */}
+       
         <div style={styles.welcomeCard}>
           <div style={styles.welcomeLeft}>
             <h2 style={styles.welcomeTitle}>
@@ -84,7 +84,7 @@ export default function UserDashboard() {
           </div>
         </div>
 
-        {/* STATS */}
+       
         <div style={styles.statsRow}>
           {[
             { label: "Total Tasks", value: tasks.length, color: "#4ade80", icon: "📋" },
@@ -99,7 +99,7 @@ export default function UserDashboard() {
           ))}
         </div>
 
-        {/* FILTER */}
+        
         <div style={styles.filterRow}>
           <h3 style={styles.sectionTitle}>My Tasks</h3>
           <div style={styles.filterBtns}>

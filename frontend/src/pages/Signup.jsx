@@ -23,7 +23,7 @@ export default function Signup() {
   };
 
   const fields = [
-    { key: "name", label: "Full Name", placeholder: "John Doe", type: "text" },
+    { key: "name", label: "Full Name", placeholder: "Name", type: "text" },
     { key: "email", label: "Email Address", placeholder: "you@example.com", type: "email" },
     { key: "password", label: "Password", placeholder: "••••••••", type: "password" },
   ];
@@ -34,7 +34,7 @@ export default function Signup() {
       <div style={styles.blob2} />
 
       <div style={styles.card}>
-        {/* LEFT SIDE */}
+        
         <div style={styles.leftPanel}>
           <div style={styles.brand}>
             <span>🌿</span>
@@ -62,7 +62,7 @@ export default function Signup() {
           </div>
         </div>
 
-        {/* RIGHT SIDE */}
+       
         <div style={styles.rightPanel}>
           <div style={styles.formHeader}>
             <div style={styles.headerIcon}>📝</div>

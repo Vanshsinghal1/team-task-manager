@@ -55,7 +55,7 @@ export default function AdminDashboard() {
       <div style={styles.blob1} />
       <div style={styles.blob2} />
 
-      {/* HEADER */}
+      
       <header style={styles.header}>
         <div style={styles.headerLeft}>
           <span style={styles.logoIcon}>🌿</span>
@@ -73,7 +73,7 @@ export default function AdminDashboard() {
       </header>
 
       <div style={styles.main}>
-        {/* STATS ROW */}
+       
         <div style={styles.statsGrid}>
           {stats.map((s) => (
             <div key={s.label} style={styles.statCard}>
@@ -88,7 +88,7 @@ export default function AdminDashboard() {
           ))}
         </div>
 
-        {/* TABS */}
+        
         <div style={styles.tabRow}>
           {[
             { id: "create", label: "➕ Create Task" },
@@ -109,7 +109,7 @@ export default function AdminDashboard() {
           ))}
         </div>
 
-        {/* CREATE TASK PANEL */}
+       
         {activeTab === "create" && (
           <div style={styles.createPanel}>
             <h2 style={styles.panelTitle}>Create & Assign Task</h2>
@@ -159,7 +159,7 @@ export default function AdminDashboard() {
           </div>
         )}
 
-        {/* TASKS GRID */}
+       
         {activeTab === "tasks" && (
           <div>
             {tasks.length === 0 ? (

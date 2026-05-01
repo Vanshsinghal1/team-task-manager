@@ -46,7 +46,7 @@ export default function Login() {
       <div style={styles.blob2} />
 
       <div style={styles.card}>
-        {/* LEFT PANEL */}
+       
         <div style={styles.leftPanel}>
           <div style={styles.leftContent}>
             <div style={styles.brand}>
@@ -78,7 +78,7 @@ export default function Login() {
           </div>
         </div>
 
-        {/* RIGHT PANEL */}
+       
         <div style={styles.rightPanel}>
           <div style={styles.formHeader}>
             <div style={styles.roleIcon}>

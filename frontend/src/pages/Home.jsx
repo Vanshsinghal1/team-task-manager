@@ -20,12 +20,12 @@ export default function Home() {
 
   return (
     <div style={styles.root}>
-      {/* Background blobs */}
+      
       <div style={styles.blob1} />
       <div style={styles.blob2} />
       <div style={styles.gridOverlay} />
 
-      {/* NAVBAR */}
+     
       <nav style={styles.nav}>
         <div style={styles.navLogo}>
           <span style={styles.logoIcon}>🌿</span>
@@ -51,7 +51,7 @@ export default function Home() {
         </div>
       </nav>
 
-      {/* HERO */}
+      
       <div ref={heroRef} style={styles.hero}>
         <div style={styles.badge}>
           <span style={styles.badgeDot} />
@@ -69,7 +69,7 @@ export default function Home() {
           <br />in one powerful platform built for modern teams.
         </p>
 
-        {/* Email CTA */}
+        
         <div style={styles.inputRow}>
           <input
             placeholder="Enter your work email"
@@ -91,7 +91,7 @@ export default function Home() {
           </button>
         </div>
 
-        {/* Role Buttons */}
+        
         <div style={styles.roleRow}>
           <button
             onClick={() => navigate("/admin-login")}
@@ -111,19 +111,6 @@ export default function Home() {
           </button>
         </div>
 
-        {/* Stats */}
-        <div style={styles.statsRow}>
-          {[
-            { value: "10K+", label: "Active Users" },
-            { value: "99.9%", label: "Uptime" },
-            { value: "50K+", label: "Tasks Created" },
-          ].map((s) => (
-            <div key={s.label} style={styles.statCard}>
-              <div style={styles.statValue}>{s.value}</div>
-              <div style={styles.statLabel}>{s.label}</div>
-            </div>
-          ))}
-        </div>
       </div>
     </div>
   );
@@ -350,28 +337,5 @@ const styles = {
     cursor: "pointer",
     transition: "all 0.2s",
   },
-  statsRow: {
-    display: "flex",
-    gap: "24px",
-  },
-  statCard: {
-    background: "rgba(255,255,255,0.04)",
-    border: "1px solid rgba(255,255,255,0.08)",
-    borderRadius: "16px",
-    padding: "20px 32px",
-    textAlign: "center",
-    backdropFilter: "blur(12px)",
-  },
-  statValue: {
-    fontSize: "28px",
-    fontWeight: "900",
-    color: "#4ade80",
-    letterSpacing: "-1px",
-  },
-  statLabel: {
-    fontSize: "12px",
-    color: "#64748b",
-    marginTop: "4px",
-    fontWeight: "500",
-  },
+
 };
